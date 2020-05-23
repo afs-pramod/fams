@@ -1,0 +1,71 @@
+package com.afs.fams.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.afs.fams.entity.CompanyEntity;
+import com.afs.fams.entity.CostCenterEntity;
+import com.afs.fams.entity.TestEntity;
+import com.afs.fams.entity.VendorInfoEntity;
+import com.afs.fams.model.CompanyBean;
+import com.afs.fams.model.CostCenterBean;
+import com.afs.fams.model.VendorInfoBean;
+import com.afs.fams.repository.ComapnyRepo;
+import com.afs.fams.repository.VendorInfoRepo;
+
+@Service
+public class VendorInfoServiceImpl implements VendorInfoService {
+
+	@Autowired
+	VendorInfoRepo vendorInfoRepo;
+
+	private final Logger log = LoggerFactory.getLogger(VendorInfoServiceImpl.class);
+
+	@Override
+	public VendorInfoEntity createVendorInfo(VendorInfoBean vendorInfoBean) {
+		ModelMapper mapper = new ModelMapper();
+		VendorInfoEntity vendorInfoEntity = mapper.map(vendorInfoBean, VendorInfoEntity.class);
+		return vendorInfoRepo.save(vendorInfoEntity);
+	}
+
+//	@Override
+//	public CompanyEntity findByCompanyId(int id) {
+//		Optional<CompanyEntity> companyEntity = companyRepo.findByCompanyId(id);
+//		return companyEntity.get();
+//	}
+
+	@Override
+	public List<VendorInfoEntity> updateVendorInfo(VendorInfoEntity vendorInfoEntity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<VendorInfoEntity> findVendorInfoById(int vendorId) {
+		List<VendorInfoEntity> vendorInfoEntity = null;
+		try {
+			vendorInfoEntity = vendorInfoRepo.findVendorInfoById(vendorId);
+					
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return vendorInfoEntity;
+	}
+
+	@Override
+	public List<VendorInfoEntity> findByVendorName(String venderName) {
+		List<VendorInfoEntity> companyEntity = null;
+		try {
+			companyEntity = companyRepo.findByCompanyName(name);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return companyEntity;
+	}
+
+}

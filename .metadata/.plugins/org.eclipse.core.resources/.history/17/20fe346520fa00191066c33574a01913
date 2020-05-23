@@ -1,0 +1,18 @@
+package com.afs.fams.service;
+
+import java.util.List;
+import com.afs.fams.entity.CompanyEntity;
+import com.afs.fams.entity.VendorInfoEntity;
+import com.afs.fams.model.VendorInfoBean;
+
+public interface VendorInfoService {
+
+	List<VendorInfoEntity> updateVendorInfo(VendorInfoEntity vendorInfoEntity);
+
+	List<VendorInfoEntity> findVendorInfById(int id);
+
+	List<VendorInfoEntity> findByVendorName(String venderName);
+
+	VendorInfoEntity createVendorInfo(VendorInfoBean vendorInfoBean);
+
+}

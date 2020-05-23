@@ -1,0 +1,64 @@
+package com.afs.fams.controller;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.afs.fams.entity.CompanyEntity;
+import com.afs.fams.entity.VendorInfoEntity;
+import com.afs.fams.model.CompanyBean;
+import com.afs.fams.model.VendorInfoBean;
+import com.afs.fams.service.CompanyService;
+import com.afs.fams.service.VendorInfoService;
+
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
+@RequestMapping("/fams/vendor")
+public class VendorInfoController {
+
+	private final Logger log = LoggerFactory.getLogger(VendorInfoController.class);
+
+	@Autowired
+	VendorInfoService vendorInfoService;
+
+	@PostMapping("/create")
+	public VendorInfoEntity createVendorInfo(@RequestBody VendorInfoBean vendorInfoBean) {
+		log.info("[VendorInfoController][createVendorInfo]");
+		return vendorInfoService.createVendorInfo(vendorInfoBean);
+	}
+
+	@PostMapping("/update")
+	public List<VendorInfoEntity> updateVendorInfo(@RequestBody VendorInfoEntity vendorInfoEntity) {
+		log.info("[CompanyController][updateCompany][id] : " + vendorInfoEntity.getVendorId());
+		return vendorInfoService.updateVendorInfo(vendorInfoEntity);
+	}
+
+//	@GetMapping("/find/{id}")
+//	public CompanyEntity findCompany(@PathVariable int id) {
+//		CompanyEntity companyEntity = companyService.findByCompanyId(id);
+//		return companyEntity;
+//	}
+//	
+
+	// method for Autocomplete
+	@GetMapping("/find/{id}")
+	public List<CompanyEntity> findCompanyById(@PathVariable int id) {
+		List<CompanyEntity> companyEntity = companyService.findCompanyId(id);
+		return companyEntity;
+	}
+
+	@GetMapping("/find1/{name}")
+	public List<CompanyEntity> findByCompanyName(@PathVariable String name) {
+		List<CompanyEntity> companyEntity = companyService.findByCompanyName(name);
+		return companyEntity;
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.afs.fams.repository;
+
+import java.util.List;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.afs.fams.entity.CompanyEntity;
+import com.afs.fams.entity.VendorInfoEntity;
+
+@Repository
+public interface VendorInfoRepo extends CrudRepository<CompanyEntity, Integer> {
+
+	@Query("from VendorInfoEntity a where a.vendorId like :vendorId")
+	// @Query("select a from TestEntity a where a.venderno =?1")
+	List<VendorInfoEntity> findVendorInfoById(@Param("vendorId") int vendorId);
+
+	@Query("from VendorInfoEntity a where a.venderName like %:venderName%")
+	List<VendorInfoEntity> findByVendorName(String venderName);
+
+}

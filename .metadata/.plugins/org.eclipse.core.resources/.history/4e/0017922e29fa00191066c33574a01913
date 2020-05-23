@@ -1,0 +1,234 @@
+package com.afs.fams.entity;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "companyEntity")
+public class VendorInfoEntity implements Serializable, Cloneable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+
+	 int  vendorId; 
+	  String venderNoErp;
+	  String  venderName;
+	  String glCode ;
+	  String address1;
+	  String address2;
+	  String address3;
+	  String address4;
+	  String pin ;
+	  String city;
+	  String state;
+	  String gstNo;
+	  String contactPerson;
+	  String contactNo;
+	  String mailId;
+	  String panNo ;
+	  String paymentMethod ;
+	  String paymentTerms ;
+	  String bankName ;
+	  String bankAddr ;
+	  String branchName ;
+	  long bankAccNo ;
+	  String  ifscNo ;
+	  String  activeTill ;
+	  String  intimation ;
+	  String uploadDocs ;
+	  String vendextra1 ;
+	  String vendextra2 ;
+	  String vendextra3;
+	   boolean status;
+	public int getVendorId() {
+		return vendorId;
+	}
+	public void setVendorId(int vendorId) {
+		this.vendorId = vendorId;
+	}
+	public String getVenderNoErp() {
+		return venderNoErp;
+	}
+	public void setVenderNoErp(String venderNoErp) {
+		this.venderNoErp = venderNoErp;
+	}
+	public String getVenderName() {
+		return venderName;
+	}
+	public void setVenderName(String venderName) {
+		this.venderName = venderName;
+	}
+	public String getGlCode() {
+		return glCode;
+	}
+	public void setGlCode(String glCode) {
+		this.glCode = glCode;
+	}
+	public String getAddress1() {
+		return address1;
+	}
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+	public String getAddress2() {
+		return address2;
+	}
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+	public String getAddress3() {
+		return address3;
+	}
+	public void setAddress3(String address3) {
+		this.address3 = address3;
+	}
+	public String getAddress4() {
+		return address4;
+	}
+	public void setAddress4(String address4) {
+		this.address4 = address4;
+	}
+	public String getPin() {
+		return pin;
+	}
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getGstNo() {
+		return gstNo;
+	}
+	public void setGstNo(String gstNo) {
+		this.gstNo = gstNo;
+	}
+	public String getContactPerson() {
+		return contactPerson;
+	}
+	public void setContactPerson(String contactPerson) {
+		this.contactPerson = contactPerson;
+	}
+	public String getContactNo() {
+		return contactNo;
+	}
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
+	}
+	public String getMailId() {
+		return mailId;
+	}
+	public void setMailId(String mailId) {
+		this.mailId = mailId;
+	}
+	public String getPanNo() {
+		return panNo;
+	}
+	public void setPanNo(String panNo) {
+		this.panNo = panNo;
+	}
+	public String getPaymentMethod() {
+		return paymentMethod;
+	}
+	public void setPaymentMethod(String paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+	public String getPaymentTerms() {
+		return paymentTerms;
+	}
+	public void setPaymentTerms(String paymentTerms) {
+		this.paymentTerms = paymentTerms;
+	}
+	public String getBankName() {
+		return bankName;
+	}
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+	public String getBankAddr() {
+		return bankAddr;
+	}
+	public void setBankAddr(String bankAddr) {
+		this.bankAddr = bankAddr;
+	}
+	public String getBranchName() {
+		return branchName;
+	}
+	public void setBranchName(String branchName) {
+		this.branchName = branchName;
+	}
+	public long getBankAccNo() {
+		return bankAccNo;
+	}
+	public void setBankAccNo(long bankAccNo) {
+		this.bankAccNo = bankAccNo;
+	}
+	public String getIfscNo() {
+		return ifscNo;
+	}
+	public void setIfscNo(String ifscNo) {
+		this.ifscNo = ifscNo;
+	}
+	public String getActiveTill() {
+		return activeTill;
+	}
+	public void setActiveTill(String activeTill) {
+		this.activeTill = activeTill;
+	}
+	public String getIntimation() {
+		return intimation;
+	}
+	public void setIntimation(String intimation) {
+		this.intimation = intimation;
+	}
+	public String getUploadDocs() {
+		return uploadDocs;
+	}
+	public void setUploadDocs(String uploadDocs) {
+		this.uploadDocs = uploadDocs;
+	}
+	public String getVendextra1() {
+		return vendextra1;
+	}
+	public void setVendextra1(String vendextra1) {
+		this.vendextra1 = vendextra1;
+	}
+	public String getVendextra2() {
+		return vendextra2;
+	}
+	public void setVendextra2(String vendextra2) {
+		this.vendextra2 = vendextra2;
+	}
+	public String getVendextra3() {
+		return vendextra3;
+	}
+	public void setVendextra3(String vendextra3) {
+		this.vendextra3 = vendextra3;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	   
+	   
+	   
+}
